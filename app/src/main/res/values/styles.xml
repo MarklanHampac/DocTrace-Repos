@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="StyleDialog" parent="Theme.AppCompat.Light.Dialog">
+<!--        <item name="android:windowBackground">@android:color/transparent</item> &lt;!&ndash; Transparent background &ndash;&gt;-->
+        <item name="android:background">@color/white</item> <!-- White background -->
+        <item name="android:windowIsFloating">true</item> <!-- Floating style -->
+    </style>
+</resources>

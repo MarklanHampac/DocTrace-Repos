@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/createDocPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".CreateDocActivity">
+
+    <TextView
+        android:id="@+id/createDoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/createDocText"
+        android:textColor="#FFFFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/docTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <EditText
+        android:id="@+id/docTitleText"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/round_border"
+        android:ems="10"
+        android:hint="@string/docTitle"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColorHint="#C4534F4F"
+        app:layout_constraintBottom_toTopOf="@+id/docDescriptionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createDoc" />
+
+    <EditText
+        android:id="@+id/docDescriptionText"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="101dp"
+        android:background="@drawable/round_border"
+        android:ems="10"
+        android:hint="@string/docDescription"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColorHint="#C4534F4F"
+        app:layout_constraintBottom_toTopOf="@+id/docTypeSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/docTitleText"
+        app:layout_constraintStart_toStartOf="@+id/docTitleText"
+        app:layout_constraintTop_toBottomOf="@+id/docTitleText" />
+
+    <Spinner
+        android:id="@+id/docTypeSpinner"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/round_border"
+        android:padding="12dp"
+        android:prompt="@string/promptDocType"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/uploadImageView"
+        app:layout_constraintEnd_toEndOf="@+id/docDescriptionText"
+        app:layout_constraintStart_toStartOf="@+id/docDescriptionText"
+        app:layout_constraintTop_toBottomOf="@+id/docDescriptionText" />
+
+    <ImageView
+        android:id="@+id/uploadImageView"
+        android:layout_width="80dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/submitButton"
+        app:layout_constraintEnd_toEndOf="@+id/docTypeSpinner"
+        app:layout_constraintStart_toStartOf="@+id/docTypeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/docTypeSpinner"
+        app:srcCompat="@android:drawable/stat_sys_upload" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="149dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="150dp"
+        android:backgroundTint="#03A9F4"
+        android:text="@string/submitButton"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/uploadImageView"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/uploadImageView"
+        app:layout_constraintTop_toBottomOf="@+id/uploadImageView" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/createDoc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/file_contract_solid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

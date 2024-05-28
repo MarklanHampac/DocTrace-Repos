@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="startColor">#6699ff</color>
+    <color name="endColor">#6600ff</color>
+    <color name="bgColor">#5C91FB</color>
+    <color name="first">#e4e2f2</color>
+    <color name="second">#bbbbc4</color>
+    <color name="third">#06060a</color>
+    <color name="fourth">#585862</color>
+    <color name="fifth">#3a3a45</color>
+    <color name="sixth">#7b7b85</color>
+    <color name="hintColor">#8006060A</color>
+    <string name="document_list">Document List</string>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="green">#1FD127</color>
+    <color name="red">#F33426</color>
+    <color name="blue">#003FFF</color>
+</resources>

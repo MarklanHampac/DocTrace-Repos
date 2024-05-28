@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LogInActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="215dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="98dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo"
+        app:tint="@color/third" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="90dp"
+        android:text="@string/loginText"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/emailLoginText"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/emailLoginText"
+        android:layout_width="271dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/round_border"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/prompt_email"
+        android:inputType="text"
+        android:paddingStart="15dp"
+        android:paddingTop="13dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="13dp"
+        android:textColor="@color/third"
+        android:textColorHint="#8006060A"
+        app:layout_constraintBottom_toTopOf="@+id/passwordLoginText"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/passwordLoginText"
+        android:layout_width="271dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="87dp"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/password_ic"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/prompt_password"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:paddingTop="13dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="13dp"
+        android:password="true"
+        android:textColor="@color/third"
+        android:textColorHint="#8006060A"
+        app:layout_constraintBottom_toTopOf="@+id/LoginButton"
+        app:layout_constraintEnd_toEndOf="@+id/emailLoginText"
+        app:layout_constraintStart_toStartOf="@+id/emailLoginText"
+        app:layout_constraintTop_toBottomOf="@+id/emailLoginText"
+        tools:ignore="TextFields" />
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="230dp"
+        android:backgroundTint="@color/third"
+        android:text="@string/loginText"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/passwordLoginText"
+        app:layout_constraintStart_toStartOf="@+id/passwordLoginText"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

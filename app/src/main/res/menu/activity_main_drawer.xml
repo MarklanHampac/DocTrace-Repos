@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_admin_AddUser"
+            android:icon="@drawable/user_plus"
+            android:title="Add User Admin" />
+        <item
+            android:id="@+id/nav_admin_AddPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/user_tag"
+            android:title="Add Position Admin" />
+        <item
+            android:id="@+id/nav_admin_AccessControl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/user_gear"
+            android:title="Access Control Admin" />
+        <item
+            android:id="@+id/nav_admin_AddDocumentType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/file_circle_plus"
+            android:title="Add Document Type Admin" />
+        <item
+            android:id="@+id/nav_admin_StateDefinition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/bars_progress"
+            android:title="State Definition Admin" />
+        <item
+            android:id="@+id/nav_admin_DocumentList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/list_ul"
+            android:title="Document List Admin" />
+        <item
+            android:id="@+id/nav_user_Incoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/arrow_down"
+            android:title="Incoming User" />
+        <item
+            android:id="@+id/nav_user_Pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/clock_rotate_left"
+            android:title="Pending User" />
+        <item
+            android:id="@+id/nav_user_CreateDocument"
+            android:icon="@drawable/file_circle_plus"
+            android:title="Create Document User" />
+        <item
+            android:id="@+id/nav_user_DocumentList"
+            android:icon="@drawable/list_ul"
+            android:title="My Documents User" />
+        <item
+            android:id="@+id/nav_user_DocumentHistory"
+            android:icon="@drawable/list_ul"
+            android:title="Document History User" />
+    </group>
+</menu>

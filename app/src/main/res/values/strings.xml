@@ -1,0 +1,145 @@
+<resources>
+    <string name="app_name">SDTS</string>
+    <string name="appTitle">Welcome Back</string>
+    <string name="loginText">Login</string>
+    <string name="addUserText">Add User</string>
+    <string name="username">Username</string>
+    <string name="Fullname">Fullname</string>
+    <string name="createDocText">Create Document</string>
+    <string name="docTitle">Document Title</string>
+    <string name="docDescription">Document Description</string>
+    <string name="docDocumentType">Document Type</string>
+    <string name="submitButton">Submit</string>
+    <string name="approveText">Approved</string>
+    <string name="rejectText">Rejected</string>
+
+    <string-array name="positions">
+        <item>Select Position</item>
+        <item>Department Head</item>
+        <item>Academic Coordinator</item>
+        <item>Course Instructor</item>
+        <item>Dean of Students</item>
+        <item>Registrar</item>
+        <item>Librarian</item>
+        <item>Student Affairs Director</item>
+        <item>Academic Dean</item>
+        <item>Curriculum Coordinator</item>
+        <item>Legal Counsel</item>
+        <item>Chief Financial Officer</item>
+        <item>Facilities Manager</item>
+        <item>Health and Safety Officer</item>
+        <item>Student Activities Coordinator</item>
+        <item>Administrative Officer</item>
+        <item>Budget Committee</item>
+        <item>Safety Officer</item>
+        <item>Director of Student Affairs</item>
+        <item>Course Coordinator</item>
+        <item>Chief Executive Officer</item>
+        <item>Compliance Officer</item>
+    </string-array>
+
+    <integer-array name="position_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+    </integer-array>
+
+    <string-array name="document_types">
+        <item>Document Type</item>
+        <item>Syllabus</item>
+        <item>Exam Schedule</item>
+        <item>Assignment Guidelines</item>
+        <item>Course Outline</item>
+        <item>Student Handbook</item>
+        <item>Academic Calendar</item>
+        <item>Grading Rubric</item>
+        <item>Registration Form</item>
+        <item>Library Rules</item>
+        <item>Code of Conduct</item>
+        <item>Educational Resources</item>
+        <item>Administrative Documents</item>
+        <item>Student Affairs</item>
+        <item>Academic Policies</item>
+        <item>Curriculum Materials</item>
+        <item>Regulatory Documents</item>
+        <item>Financial Information</item>
+        <item>Campus Facilities</item>
+        <item>Health and Safety Guidelines</item>
+        <item>Student Activities</item>
+    </string-array>
+
+    <integer-array name="documenttype_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </integer-array>
+
+    <string name="promptDocType">Document Type</string>
+    <string name="promptPos">Select Position</string>
+    <string name="promptDepartment">Select Department</string>
+    <string name="promptAccessType">Access Type</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
+    <string name="user_type">User Type</string>
+    <string name="recieve">RECIEVE</string>
+    <string name="returns">RETURN</string>
+</resources>

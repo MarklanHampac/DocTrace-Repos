@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Admin_Ui.add_user.admin_add_user_form"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="40dp">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="122dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="143dp"
+        android:src="@android:drawable/ic_menu_add"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/third" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="@string/addUserText"
+        android:textColor="@color/third"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="415dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="115dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="200dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="107dp"
+                android:layout_marginEnd="107dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/firstname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:textColor="@color/third"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/usernameAddUser"
+                app:layout_constraintStart_toStartOf="@+id/usernameAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <EditText
+                android:id="@+id/usernameAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="13dp"
+                android:textColor="@color/third"
+                android:textColorHint="#8006060A"
+                app:layout_constraintBottom_toTopOf="@+id/lasttname"
+                app:layout_constraintEnd_toEndOf="@+id/divider2"
+                app:layout_constraintStart_toStartOf="@+id/divider2"
+                app:layout_constraintTop_toBottomOf="@+id/firstname" />
+
+            <TextView
+                android:id="@+id/lasttname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="170dp"
+                android:text="@string/Fullname"
+                android:textColor="@color/third"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fullnameAddUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/fullnameAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/usernameAddUser" />
+
+            <EditText
+                android:id="@+id/fullnameAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="@string/Fullname"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="13dp"
+                android:textColor="@color/third"
+                android:textColorHint="#8006060A"
+                app:layout_constraintBottom_toTopOf="@+id/username"
+                app:layout_constraintEnd_toEndOf="@+id/usernameAddUser"
+                app:layout_constraintStart_toStartOf="@+id/usernameAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/lasttname" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="172dp"
+                android:text="@string/prompt_email"
+                android:textColor="@color/third"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/emailAddUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/emailAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/fullnameAddUser" />
+
+            <EditText
+                android:id="@+id/emailAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="@string/prompt_email"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="13dp"
+                android:textColor="@color/third"
+                android:textColorHint="#8006060A"
+                app:layout_constraintBottom_toTopOf="@+id/positionLabelText"
+                app:layout_constraintEnd_toEndOf="@+id/fullnameAddUser"
+                app:layout_constraintStart_toStartOf="@+id/fullnameAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/username" />
+
+            <TextView
+                android:id="@+id/positionLabelText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="175dp"
+                android:text="@string/promptPos"
+                android:textColor="@color/third"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/positionAddUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/positionAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/emailAddUser" />
+
+            <Spinner
+                android:id="@+id/positionAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:dropDownSelector="@color/third"
+                android:padding="16dp"
+                android:prompt="@string/promptPos"
+                android:spinnerMode="dialog"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="@+id/emailAddUser"
+                app:layout_constraintStart_toStartOf="@+id/emailAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/positionLabelText"
+                tools:focusableInTouchMode="true" />
+
+            <TextView
+                android:id="@+id/passwordLabelText"
+                android:layout_width="89dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="@string/prompt_password"
+                android:textColor="@color/third"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/passwordAddUser"
+                app:layout_constraintStart_toStartOf="@+id/passwordAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/userTypeAddUser" />
+
+            <EditText
+                android:id="@+id/passwordAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="@string/prompt_password"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="13dp"
+                android:password="true"
+                android:textColor="@color/third"
+                android:textColorHint="#8006060A"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/userTypeAddUser"
+                app:layout_constraintStart_toStartOf="@+id/userTypeAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLabelText" />
+
+            <Spinner
+                android:id="@+id/departmentAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:padding="16dp"
+                android:prompt="@string/promptDepartment"
+                app:layout_constraintBottom_toTopOf="@+id/userTypeLableText"
+                app:layout_constraintEnd_toEndOf="@+id/positionAddUser"
+                app:layout_constraintStart_toStartOf="@+id/positionAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/promptDepartment"
+                android:textColor="@color/third"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/departmentAddUser"
+                app:layout_constraintStart_toStartOf="@+id/departmentAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/positionAddUser" />
+
+            <EditText
+                android:id="@+id/userTypeAddUser"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:background="@drawable/round_border"
+                android:ems="10"
+                android:hint="@string/user_type"
+                android:paddingStart="20dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="13dp"
+                android:textColorHint="#8006060A"
+                app:layout_constraintBottom_toTopOf="@+id/passwordLabelText"
+                app:layout_constraintEnd_toEndOf="@+id/departmentAddUser"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintStart_toEndOf="@+id/departmentAddUser"
+                app:layout_constraintStart_toStartOf="@+id/departmentAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/userTypeLableText" />
+
+            <TextView
+                android:id="@+id/userTypeLableText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="User Type"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/userTypeAddUser"
+                app:layout_constraintStart_toStartOf="@+id/userTypeAddUser"
+                app:layout_constraintTop_toBottomOf="@+id/departmentAddUser" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/addUserCancel"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="34dp"
+        android:backgroundTint="@color/red"
+        android:text="@android:string/cancel"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/addUserButton"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <Button
+        android:id="@+id/addUserButton"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="34dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/addUserText"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addUserCancel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
