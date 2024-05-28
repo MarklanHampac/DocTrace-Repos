@@ -21,10 +21,10 @@ import java.util.List;
 public class LogInActivity extends AppCompatActivity {
     public static String userEmailLogin;
     public static String userPasswordLogin;
-    public static String userPositionLogin; //= String.valueOf(1);
-    public static String userIdLogin; //= String.valueOf(1);//temp
-    public static String userTypeLogin; //= "user";
-    public static String userDepartmentLogin; //= String.valueOf(1);
+    public static String userPositionLogin;
+    public static String userIdLogin;
+    public static String userTypeLogin;
+    public static String userDepartmentLogin;
     public static String userFullNameLogin;
     public static String userNameLogin;
     private EditText email;
@@ -118,6 +118,7 @@ public class LogInActivity extends AppCompatActivity {
 //                            startActivity(signupIntent);
 
                             Toast.makeText(LogInActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+
 
                         } else {
                             Toast.makeText(LogInActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
