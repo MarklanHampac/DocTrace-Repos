@@ -12,60 +12,60 @@
         <item
             android:id="@+id/nav_admin_AddUser"
             android:icon="@drawable/user_plus"
-            android:title="Add User Admin" />
+            android:title="Add User" />
         <item
             android:id="@+id/nav_admin_AddPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/user_tag"
-            android:title="Add Position Admin" />
+            android:title="Add Position" />
         <item
             android:id="@+id/nav_admin_AccessControl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/user_gear"
-            android:title="Access Control Admin" />
+            android:title="Access Control" />
         <item
             android:id="@+id/nav_admin_AddDocumentType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/file_circle_plus"
-            android:title="Add Document Type Admin" />
+            android:title="Add Document Type" />
         <item
             android:id="@+id/nav_admin_StateDefinition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/bars_progress"
-            android:title="State Definition Admin" />
+            android:title="State Definition" />
         <item
             android:id="@+id/nav_admin_DocumentList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/list_ul"
-            android:title="Document List Admin" />
+            android:title="Document List" />
         <item
             android:id="@+id/nav_user_Incoming"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/arrow_down"
-            android:title="Incoming User" />
+            android:title="Incoming" />
         <item
             android:id="@+id/nav_user_Pending"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/clock_rotate_left"
-            android:title="Pending User" />
+            android:title="Pending" />
         <item
             android:id="@+id/nav_user_CreateDocument"
             android:icon="@drawable/file_circle_plus"
-            android:title="Create Document User" />
+            android:title="Create Document" />
         <item
             android:id="@+id/nav_user_DocumentList"
             android:icon="@drawable/list_ul"
-            android:title="My Documents User" />
+            android:title="My Documents" />
         <item
             android:id="@+id/nav_user_DocumentHistory"
             android:icon="@drawable/list_ul"
-            android:title="Document History User" />
+            android:title="Document History" />
     </group>
 </menu>
