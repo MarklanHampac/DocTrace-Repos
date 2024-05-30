@@ -61,11 +61,28 @@ public class LogInActivity extends AppCompatActivity {
                     // Handle JSON creation error (optional)
                 }
 
-                Log.d("Login Data", loginData.toString());
-                int response = SendToAPI.sendData(loginData,"http://"+ wifiIpAddress +"//Module/login-user");
-                Log.d("Login Response", "onClick: " + response );
-                Intent signupIntent = new Intent(LogInActivity.this, DashboardActivity.class);
-                startActivity(signupIntent);
+                String loginStatus = SendToAPI.retrieveData(loginData, "http://" + wifiIpAddress + "/Module/check-login-status");
+                Log.d("Check login status", "onClick: " + loginStatus);
+
+                int response = 0;
+                try {
+                    JSONObject statusJson = new JSONObject(loginStatus);
+                    boolean loggedIn = statusJson.getBoolean("logged_in");
+
+                    if (!loggedIn) {
+                        Log.d("Login Data", loginData.toString());
+                        response = SendToAPI.sendData(loginData, "http://" + wifiIpAddress + "/Module/login-user");
+                        Log.d("Login Response", "onClick: " + response);
+
+                        Intent loginIntent = new Intent(LogInActivity.this, DashboardActivity.class);
+                        startActivity(loginIntent);
+                    } else {
+                        Toast.makeText(LogInActivity.this, "User Already Logged In", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
 
                 //add conditions before changing to dashboard
                 if (userEmail.isEmpty() || userPassword.isEmpty()) {

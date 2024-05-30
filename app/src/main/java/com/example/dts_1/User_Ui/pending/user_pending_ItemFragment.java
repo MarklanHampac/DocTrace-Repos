@@ -91,7 +91,6 @@ public class user_pending_ItemFragment extends Fragment {
         items = fetchViewDocumentItems(Integer.parseInt(userPositionLogin), wifiIpAddress, "pending");
         //=================================Getting Data For The List End=============================//
 
-
         // Find the RecyclerView in the view
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.newlist); // replace "recycler_view" with the id of your RecyclerView
 
@@ -268,7 +267,7 @@ public class user_pending_ItemFragment extends Fragment {
                     if (getArguments() != null) {
 
                         String setState = "approve";
-                        int userId = 1; // gikan sa naka log in nga user
+                        int userId = Integer.parseInt(userIdLogin); // gikan sa naka log in nga user
                         String docId = getArguments().getString("document id");
 
                         // Sample file metadata

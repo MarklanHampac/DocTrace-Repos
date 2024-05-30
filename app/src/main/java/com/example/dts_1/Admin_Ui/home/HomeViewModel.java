@@ -1,5 +1,7 @@
 package com.example.dts_1.Admin_Ui.home;
 
+import static com.example.dts_1.LogInActivity.userFullNameLogin;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -10,7 +12,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue(userFullNameLogin);
     }
 
     public LiveData<String> getText() {

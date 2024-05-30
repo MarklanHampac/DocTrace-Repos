@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
@@ -37,6 +38,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.dts_1.FilePathGetter;
+import com.example.dts_1.PopUpDialogFragment;
 import com.example.dts_1.PopulateSpinner;
 import com.example.dts_1.R;
 import com.example.dts_1.SendToAPI;
@@ -229,9 +231,19 @@ public class createDocument extends Fragment {
                     e.printStackTrace();
                 }
                 Log.i("Submitted File", "onClick: " + fileData);
-
+                // Show custom dialog fragment after data submission
+                PopUpDialogFragment dialogFragment = PopUpDialogFragment.newInstance("Document Created.");
+                dialogFragment.show(getParentFragmentManager(), "PopUpDialogFragment");
+                // Use a handler to delay the update until the view is created
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialogFragment.updateGifImageView(R.drawable.approved, "Document Saved",false);
+                    }
+                });
                 SendToAPI.sendFile(fileData, filePath, fileName,"http://"+wifiIpAddress+"/Module/create-document");
-                
+                docTitle.setText("");
+                docDescription.setText("");
                 Toast.makeText(getActivity(), "Submitted File: " + fileData, Toast.LENGTH_LONG).show();
             }
         });
