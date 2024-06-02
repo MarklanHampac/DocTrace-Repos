@@ -2,11 +2,15 @@ package com.example.dts_1.User_Ui.incoming;
 
 import static com.example.dts_1.LogInActivity.userIdLogin;
 import static com.example.dts_1.LogInActivity.userPositionLogin;
-import static com.example.dts_1.LogInActivity.userTypeLogin;
 
 import android.annotation.SuppressLint;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,30 +22,22 @@ import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dts_1.PopUpDialogFragment;
-import com.example.dts_1.User_Ui.incoming.user_incoming_PlaceholderContent;
 import com.example.dts_1.R;
 import com.example.dts_1.SendToAPI;
-import com.example.dts_1.User_Ui.view_document.user_viewdocument_ItemFragment;
-import com.example.dts_1.User_Ui.view_document.user_viewdocument_PlaceholderContent;
-import com.example.dts_1.User_Ui.view_document.user_viewdocument_RecyclerViewAdapter;
 import com.example.dts_1.ipGetter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import pl.droidsonroids.gif.GifImageView;
 
 /**
  * A fragment representing a list of Items.
@@ -174,6 +170,7 @@ public class user_incoming_ItemFragment extends Fragment {
         args.putInt("status", Integer.parseInt(item.status));
         args.putInt("isDone", Integer.parseInt(item.isDone));
         args.putInt("doc_status", Integer.parseInt(item.doc_status));
+        args.putString("file_path", item.filePath);
         dialogFragment.setArguments(args);
         dialogFragment.show(getChildFragmentManager(), "CustomDialog");
     }
@@ -276,6 +273,45 @@ public class user_incoming_ItemFragment extends Fragment {
 
             }
 
+            TextView DownloadFile = view.findViewById(R.id.DownloadFileTextView);
+            DownloadFile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        assert getArguments() != null;
+                        String remoteFilePath = getArguments().getString("file_path");
+
+                        // Create a ContentValues object to represent the file metadata
+                        ContentValues contentValues = new ContentValues();
+                        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, remoteFilePath);
+                        contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "application/octet-stream");
+                        contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+
+                        // Request write access to the Downloads directory
+                        ContentResolver resolver = requireContext().getContentResolver();
+                        Uri uri = null;
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                            uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues);
+                        }
+
+                        if (uri != null) {
+                            // Call the method to download the file and pass the localFilePath
+                            SendToAPI.downloadFile(requireContext(),"http://" + wifiIpAddress + "/Module/download-document", uri, remoteFilePath);
+
+                            // Show a toast message indicating successful download
+                            Toast.makeText(getActivity(), "File downloaded successfully to " + uri.toString(), Toast.LENGTH_LONG).show();
+                        } else {
+                            // Handle the case where the URI is null
+                            Toast.makeText(getActivity(), "Failed to create a file in the Downloads directory", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        // Handle any exceptions
+                    }
+                }
+            });
+
+
             //region=====================Updating Document Status(Receive)=======================================//
             Button SubmitButton = view.findViewById(R.id.documentStatusApproveButton);
             SubmitButton.setOnClickListener(new View.OnClickListener() {
@@ -302,7 +338,7 @@ public class user_incoming_ItemFragment extends Fragment {
                             }
                             Log.i("Submitted Data", "onClick: " + JsonData);
 
-                            SendToAPI.sendData(JsonData,"http://"+ wifiIpAddress +"//Module/update-document-docstatus"); //via usb tethering ip//
+                            SendToAPI.sendData(JsonData,"http://"+ wifiIpAddress +"/Module/update-document-docstatus"); //via usb tethering ip//
                             Toast.makeText(getActivity(), "Submitted Data: " + JsonData, Toast.LENGTH_LONG).show();
 
                             // Show custom dialog fragment after data submission
@@ -364,7 +400,6 @@ public class user_incoming_ItemFragment extends Fragment {
                             e.printStackTrace();
                         }
                         Log.i("Submitted Data", "onClick: " + JsonData);
-                        ;
                         SendToAPI.sendData(JsonData,"http://"+ wifiIpAddress +"//Module/update-document-docstatus"); //via usb tethering ip//
                         Toast.makeText(getActivity(), "Submitted Data: " + JsonData, Toast.LENGTH_LONG).show();
 
