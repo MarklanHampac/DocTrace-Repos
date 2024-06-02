@@ -110,7 +110,7 @@ public class documenttype_ItemFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
 
-                        String DocumentTypeName = documentTypeName.getText().toString();;
+                        String DocumentTypeName = documentTypeName.getText().toString();
 
                         // Sample file metadata
                         JSONObject JsonData = new JSONObject();

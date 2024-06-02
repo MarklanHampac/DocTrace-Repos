@@ -1,5 +1,6 @@
 package com.example.dts_1;
 
+import static com.example.dts_1.LogInActivity.userEmailLogin;
 import static com.example.dts_1.LogInActivity.userTypeLogin;
 
 import android.app.AlertDialog;
@@ -132,7 +133,7 @@ public class DashboardActivity extends AppCompatActivity {
                 try {
                     // Create JSONObject
                     JSONObject sample = new JSONObject();
-                    sample.put("email", "Sample");
+                    sample.put("email", userEmailLogin);
 
                     String loginStatus = SendToAPI.retrieveData(sample, "http://" + wifiIpAddress + "/Module/logout-user");
                     Log.d("Logout Function", "onClick: "+ loginStatus);

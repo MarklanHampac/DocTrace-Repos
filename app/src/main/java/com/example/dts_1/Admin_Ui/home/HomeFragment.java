@@ -24,8 +24,8 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private TextView currentTimeTextView;
 
-    private Handler handler = new Handler(Looper.getMainLooper());
-    private Runnable updateTimeRunnable = new Runnable() {
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    private final Runnable updateTimeRunnable = new Runnable() {
         @Override
         public void run() {
             // Update the TextView with the current time

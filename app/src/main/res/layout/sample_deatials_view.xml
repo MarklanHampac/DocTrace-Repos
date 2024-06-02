@@ -5,8 +5,8 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="551dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -280,6 +280,13 @@
             android:layout_height="45dp"
             android:background="?android:attr/listDivider"
             android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/sample"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:text="Download File"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"

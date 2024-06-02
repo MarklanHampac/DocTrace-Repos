@@ -16,7 +16,8 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="60dp"
+            android:paddingTop="5dp"
             android:text="Document Status"
             android:textAlignment="center"
             android:textColor="@color/third"
@@ -134,7 +135,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="253dp">
 
                 <ImageView
                     android:id="@+id/SubmittedCheckBox"
@@ -172,7 +173,7 @@
                     android:id="@+id/ApprovedCheckBox"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/ApprovalCheckBox"
                     app:layout_constraintStart_toStartOf="@+id/ApprovalCheckBox"
@@ -264,9 +265,23 @@
         <View
             android:id="@+id/divider6"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="22dp"
             android:background="?android:attr/listDivider"
             android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/DownloadFileTextView"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Download Attached File"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/download" />
+
+        <View
+            android:id="@+id/divider11"
+            android:layout_width="match_parent"
+            android:layout_height="21dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
