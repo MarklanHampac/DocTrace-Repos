@@ -24,7 +24,7 @@ import java.util.List;
 public class user_pending_RecyclerViewAdapter extends RecyclerView.Adapter<user_pending_RecyclerViewAdapter.ViewHolder> {
 
     private final List<PlaceholderItem> mValues;
-    private OnItemClickListener listener;
+    private final OnItemClickListener listener;
 
     public user_pending_RecyclerViewAdapter(List<PlaceholderItem> items, OnItemClickListener listener) {
         mValues = items;

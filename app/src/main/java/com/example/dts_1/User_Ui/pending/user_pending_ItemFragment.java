@@ -281,7 +281,6 @@ public class user_pending_ItemFragment extends Fragment {
                             e.printStackTrace();
                         }
                         Log.i("Submitted Data", "onClick: " + JsonData);
-                        ;
                         SendToAPI.sendData(JsonData,"http://"+ wifiIpAddress +"//Module/update-document-status"); //via usb tethering ip//
                         Toast.makeText(getActivity(), "Submitted Data: " + JsonData, Toast.LENGTH_LONG).show();
                     }
@@ -317,7 +316,6 @@ public class user_pending_ItemFragment extends Fragment {
                             e.printStackTrace();
                         }
                         Log.i("Submitted Data", "onClick: " + JsonData);
-                        ;
                         SendToAPI.sendData(JsonData,"http://"+ wifiIpAddress +"//Module/update-document-status"); //via usb tethering ip//
                         Toast.makeText(getActivity(), "Submitted Data: " + JsonData, Toast.LENGTH_LONG).show();
 

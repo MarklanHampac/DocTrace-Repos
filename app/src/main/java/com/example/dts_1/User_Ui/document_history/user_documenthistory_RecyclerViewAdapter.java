@@ -22,7 +22,7 @@ import java.util.List;
 public class user_documenthistory_RecyclerViewAdapter extends RecyclerView.Adapter<user_documenthistory_RecyclerViewAdapter.ViewHolder> {
 
     private final List<PlaceholderItem> mValues;
-    private  OnItemClickListener listener;
+    private final OnItemClickListener listener;
     public user_documenthistory_RecyclerViewAdapter(List<PlaceholderItem> items, OnItemClickListener listener) {
         mValues = items;
         this.listener = listener;

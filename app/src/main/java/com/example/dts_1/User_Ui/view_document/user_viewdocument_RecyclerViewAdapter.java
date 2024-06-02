@@ -19,7 +19,7 @@ import java.util.List;
 public class user_viewdocument_RecyclerViewAdapter extends RecyclerView.Adapter<user_viewdocument_RecyclerViewAdapter.ViewHolder> {
 
     private final List<PlaceholderItem> mValues;
-    private OnItemClickListener listener;
+    private final OnItemClickListener listener;
 
     public user_viewdocument_RecyclerViewAdapter(List<PlaceholderItem> items, OnItemClickListener listener) {
         mValues = items;
