@@ -13,6 +13,10 @@ import com.example.dts_1.Admin_Ui.add_user.adduser_PlaceholderContent;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +42,11 @@ public class LogInActivity extends AppCompatActivity {
         email = findViewById(R.id.emailLoginText);
         password = findViewById(R.id.passwordLoginText);
 
+        // Initialize the CookieManager
+        CookieManager cookieManager = new CookieManager();
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+        CookieHandler.setDefault(cookieManager);
+
         // Get the WiFi IP address using the WifiUtils class
         ipGetter ipGetter = new ipGetter(this);
         String wifiIpAddress = ipGetter.getWifiIpAddress();
@@ -61,30 +70,50 @@ public class LogInActivity extends AppCompatActivity {
                     // Handle JSON creation error (optional)
                 }
 
-                String loginStatus = SendToAPI.retrieveData(loginData, "http://" + wifiIpAddress + "/Module/check-login-status");
-                Log.d("Check login status", "onClick: " + loginStatus);
+                int response = Integer.parseInt(String.valueOf(SendToAPI.sendData(loginData, "http://" + wifiIpAddress + "/Module/login-user")));
 
-                int response = 0;
-                try {
-                    JSONObject statusJson = new JSONObject(loginStatus);
-                    boolean loggedIn = statusJson.getBoolean("logged_in");
+                if (response == HttpURLConnection.HTTP_OK) {
 
-                    if (!loggedIn) {
-                        Log.d("Login Data", loginData.toString());
-                        response = SendToAPI.sendData(loginData, "http://" + wifiIpAddress + "/Module/login-user");
-                        Log.d("Login Response", "onClick: " + response);
+                    EditText otp = findViewById(R.id.OtptextView);
+                    otp.setVisibility(View.VISIBLE);
 
-                        Intent loginIntent = new Intent(LogInActivity.this, DashboardActivity.class);
-                        startActivity(loginIntent);
-                    } else {
-                        Toast.makeText(LogInActivity.this, "User Already Logged In", Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    Toast.makeText(LogInActivity.this, "Please Enter The OTP", Toast.LENGTH_LONG).show();
+                    LoginButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Create JSONObject
+                            JSONObject otpData = new JSONObject();
+                            try {
+
+                                otpData.put("otp", otp.getText());
+                                otpData.put("email", userEmail);
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                // Handle JSON creation error (optional)
+                            }
+                            int otpResponse = Integer.parseInt(String.valueOf(SendToAPI.sendData(otpData, "http://" + wifiIpAddress + "/Module/verify-otp")));
+                            if (otpResponse == HttpURLConnection.HTTP_OK){
+                                Intent loginIntent = new Intent(LogInActivity.this, DashboardActivity.class);
+                                startActivity(loginIntent);
+
+                                Toast.makeText(LogInActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                            }else {
+                                Toast.makeText(LogInActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+
+                } else if (response == HttpURLConnection.HTTP_FORBIDDEN)
+                {
+                    Toast.makeText(LogInActivity.this, "User Already Logged In", Toast.LENGTH_LONG).show();
+                    return;
+                } else if (response == HttpURLConnection.HTTP_INTERNAL_ERROR) {
+                    Toast.makeText(LogInActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+                    return;
                 }
 
-
-                //add conditions before changing to dashboard
+                //add conditions before changing to dashboard(Loading User Info)
                 if (userEmail.isEmpty() || userPassword.isEmpty()) {
                     Toast.makeText(LogInActivity.this, "Please Fill The Fields", Toast.LENGTH_LONG).show();
                 } else {
@@ -131,12 +160,6 @@ public class LogInActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-//                            Intent signupIntent = new Intent(LogInActivity.this, DashboardActivity.class);
-//                            startActivity(signupIntent);
-
-                            Toast.makeText(LogInActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-
-
                         } else {
                             Toast.makeText(LogInActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
                         }
@@ -144,15 +167,6 @@ public class LogInActivity extends AppCompatActivity {
             }
 
         });
-//        //Temporary signup
-//        TextView SignUpText = findViewById(R.id.SignUpText);
-//        SignUpText.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                Intent signupIntent = new Intent(LogInActivity.this, SignupActivity.class);
-//                startActivity(signupIntent);
-//            }
-//        });
     }
 }
 
